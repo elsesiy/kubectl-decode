@@ -90,6 +90,8 @@ func NewCmdViewSecret() *cobra.Command {
 	cmd.Flags().StringVarP(&res.customContext, "context", "c", res.customContext, "override the current context")
 	cmd.Flags().StringVarP(&res.kubeConfig, "kubeconfig", "k", res.kubeConfig, "explicitly provide the kubeconfig to use")
 
+	cmd.AddCommand(NewCmdCompletion())
+
 	return cmd
 }
 
